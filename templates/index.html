@@ -2,49 +2,44 @@
 
 <!doctype html>
 <html lang="en">
-<head>
-    <title> Knockout Winner Predictor </title>
-    <style>
-        body{
-            background-color:lightblue;
-            font-size: x-large;
-        }
-        button{
-            background-color: lightsalmon;
-            color: black;
-            height: 40px;
-            width: 150px;
-            font-size: large;
-            cursor: pointer;
-        }
-        a{
-            text-decoration: none;
-        }
-        .form-row{
-            margin: 20px;
-        }
-    </style>
-</head>
-<body id="overlay" >
-<center><h1>Knockout Tournament Predictor</h1></center>
-    <form method="post">
-        {% csrf_token %}
-        <div class="form-row">
-            <label>Number of teams participating </label>
-            <input type="text" name="website" required>
-        </div>
-        <div class="form-row">
-            <label>List of teams participating seperated by , (comma) </label>
-            <input type="text" name="desired_price" required style="width:60%;">
-        </div>
-        <!--<div class="form-row">
-            <label>E-mail: </label>
-            <input type="email" name="user_email" required style="width:40%;">
-        </div>-->
-
-        <div class="text-center">
-            <button type="submit"> Submit </button>
-        </div>
-    </form>
-</body>
+    <head>
+        <title> Knockout Winner Predictor </title>
+        <style>
+            body{
+                background-color:lightblue;
+                font-size: x-large;
+            }
+            button{
+                background-color: lightsalmon;
+                color: black;
+                height: 40px;
+                width: 150px;
+                font-size: large;
+                cursor: pointer;
+            }
+            a{
+                text-decoration: none;
+            }
+            .form-row{
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body id="overlay" >
+    <center><h1>Knockout Tournament Predictor</h1></center>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                <label>Number of teams participating </label>
+                <input type="text" name="website" required>
+            </div>
+            <div class="form-row">
+                <label>List of teams participating seperated by , (comma) </label>
+                <input type="text" name="desired_price" required style="width:60%;">
+            </div>
+            <div class="text-center">
+                <button type="submit"> Submit </button>
+            </div>
+        </form>
+    </body>
 </html>
