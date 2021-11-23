@@ -27,15 +27,15 @@
     </head>
     <body id="overlay" >
     <center><h1>Knockout Tournament Predictor</h1></center>
-        <form method="post">
+        <form action="{% url 'home' %}" method="post">
             {% csrf_token %}
             <div class="form-row">
                 <label>Number of teams participating </label>
-                <input type="text" name="website" required>
+                <input type="text" name="no_of_teams" required>
             </div>
             <div class="form-row">
                 <label>List of teams participating seperated by , (comma) </label>
-                <input type="text" name="desired_price" required style="width:60%;">
+                <input type="text" name="string_of_teams_list" required style="width:60%;">
             </div>
             <div class="text-center">
                 <button type="submit"> Submit </button>
