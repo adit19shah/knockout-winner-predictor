@@ -19,5 +19,5 @@ from knockout_tournament_predictor import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home,name="main_page"),
+    path('', views.home,name="home"),
 ]
