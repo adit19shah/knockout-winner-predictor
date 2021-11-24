@@ -5,60 +5,90 @@
         <title>Prediction Results</title>
         <style>
             body{
-                background-color: whitesmoke;
-                font-size: x-large;
+                background-image: url(../assets/Oceanic.jfif);
+                font-size: large;
+                background-size: cover;
+                font-family: 'Roboto', sans-serif;
+                color: white;
+            }
+            .heading-cov {
+                border:white 2px solid;
+                background: #592599;
+                border-radius: 20px;
+                margin-bottom: 2%;
+            }
+            .text-center {
+                text-align: center;
+            }
+            .card-data {
+                background: rgba( 255, 255, 255, 0.45 );
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 2px );
+                -webkit-backdrop-filter: blur( 2px );
+                border-radius: 10px;
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
+                width: 50%;
+                /* height: 50%; */
+                margin: auto;
+                padding: 2%;
             }
         </style>
     </head>
     <body>
-        <center><h1> Probability of winning for each team as predicted by our Predictor </h1></center>
-        {% if A %}
-            <p> <strong>Probability of winning for team A: </strong> {{ A }} </p>
-        {% endif %}
-        {% if B %}
-            <p> <strong>Probability of winning for team B: </strong> {{ B }} </p>
-        {% endif %}
-        {% if C %}
-            <p> <strong>Probability of winning for team C: </strong> {{ C }} </p>
-        {% endif %}
-        {% if D %}
-            <p> <strong>Probability of winning for team D: </strong> {{ D }} </p>
-        {% endif %}
-        {% if E %}
-            <p> <strong>Probability of winning for team E: </strong> {{ E }} </p>
-        {% endif %}
-        {% if F %}
-            <p> <strong>Probability of winning for team F: </strong> {{ F }} </p>
-        {% endif %}
-        {% if G %}
-            <p> <strong>Probability of winning for team G: </strong> {{ G }} </p>
-        {% endif %}
-        {% if H %}
-            <p> <strong>Probability of winning for team H: </strong> {{ H }} </p>
-        {% endif %}
-        {% if I %}
-            <p> <strong>Probability of winning for team I: </strong> {{ I }} </p>
-        {% endif %}
-        {% if J %}
-            <p> <strong>Probability of winning for team J: </strong> {{ J }} </p>
-        {% endif %}
-        {% if K %}
-            <p> <strong>Probability of winning for team K: </strong> {{ K }} </p>
-        {% endif %}
-        {% if L %}
-            <p> <strong>Probability of winning for team L: </strong> {{ L }} </p>
-        {% endif %}
-        {% if M %}
-            <p> <strong>Probability of winning for team M: </strong> {{ M }} </p>
-        {% endif %}
-        {% if N %}
-            <p> <strong>Probability of winning for team N: </strong> {{ N }} </p>
-        {% endif %}
-        {% if O %}
-            <p> <strong>Probability of winning for team O: </strong> {{ O }} </p>
-        {% endif %}
-        {% if P %}
-            <p> <strong>Probability of winning for team P </strong> {{ P }} </p>
-        {% endif %}
+        <div class="heading-cov">
+            <h1 class="text-center"> Probability of winning for each team as predicted by our Predictor </h1>
+        </div>
+
+        <div class="text-center card-data">
+            {% if A %}
+                <p> <strong>Probability of winning for team A: </strong> {{ A }} </p>
+            {% endif %}
+            {% if B %}
+                <p> <strong>Probability of winning for team B: </strong> {{ B }} </p>
+            {% endif %}
+            {% if C %}
+                <p> <strong>Probability of winning for team C: </strong> {{ C }} </p>
+            {% endif %}
+            {% if D %}
+                <p> <strong>Probability of winning for team D: </strong> {{ D }} </p>
+            {% endif %}
+            {% if E %}
+                <p> <strong>Probability of winning for team E: </strong> {{ E }} </p>
+            {% endif %}
+            {% if F %}
+                <p> <strong>Probability of winning for team F: </strong> {{ F }} </p>
+            {% endif %}
+            {% if G %}
+                <p> <strong>Probability of winning for team G: </strong> {{ G }} </p>
+            {% endif %}
+            {% if H %}
+                <p> <strong>Probability of winning for team H: </strong> {{ H }} </p>
+            {% endif %}
+            {% if I %}
+                <p> <strong>Probability of winning for team I: </strong> {{ I }} </p>
+            {% endif %}
+            {% if J %}
+                <p> <strong>Probability of winning for team J: </strong> {{ J }} </p>
+            {% endif %}
+            {% if K %}
+                <p> <strong>Probability of winning for team K: </strong> {{ K }} </p>
+            {% endif %}
+            {% if L %}
+                <p> <strong>Probability of winning for team L: </strong> {{ L }} </p>
+            {% endif %}
+            {% if M %}
+                <p> <strong>Probability of winning for team M: </strong> {{ M }} </p>
+            {% endif %}
+            {% if N %}
+                <p> <strong>Probability of winning for team N: </strong> {{ N }} </p>
+            {% endif %}
+            {% if O %}
+                <p> <strong>Probability of winning for team O: </strong> {{ O }} </p>
+            {% endif %}
+            {% if P %}
+                <p> <strong>Probability of winning for team P </strong> {{ P }} </p>
+            {% endif %}
+        </div>
+        
     </body>
 </html>

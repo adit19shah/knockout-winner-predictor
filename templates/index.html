@@ -6,16 +6,24 @@
         <title> Knockout Winner Predictor </title>
         <style>
             body{
-                background-color:lightblue;
+                /* background-color:lightblue; */
+                background-image: url(../assets/Oceanic.jfif);
                 font-size: x-large;
+                background-size: cover;
+                font-family: 'Roboto', sans-serif;
+                color: white;
+            }
+            h1 {
+                font-family: 'Roboto', sans-serif;
             }
             button{
-                background-color: lightsalmon;
-                color: black;
+                background-color: #218838;
+                color: white;
                 height: 40px;
                 width: 150px;
                 font-size: large;
                 cursor: pointer;
+                border-radius: 20px;
             }
             a{
                 text-decoration: none;
@@ -23,23 +31,62 @@
             .form-row{
                 margin: 20px;
             }
+            .text-center {
+                text-align: center;
+                /* padding: 1%; */
+            }
+            .card {
+                background: rgba( 255, 255, 255, 0.45 );
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 2px );
+                -webkit-backdrop-filter: blur( 2px );
+                border-radius: 10px;
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
+                width: 50%;
+                /* height: 50%; */
+                margin: auto;
+                padding: 2%;
+            }
+            input {
+                border: 2px solid white;
+                backdrop-filter: blur(1px);
+                border-radius: 10px;
+                font-size: medium;
+                margin-top: 2%;
+                padding: 1%;
+            }
+            .form-row {
+                padding: 2%;
+            }
+            #overlay {
+                margin: auto;
+            }
         </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body id="overlay" >
-    <center><h1>Knockout Tournament Predictor</h1></center>
-        <form action="{% url 'home' %}" method="post">
-            {% csrf_token %}
-            <div class="form-row">
-                <label>Number of teams participating </label>
-                <input type="text" name="no_of_teams" required>
-            </div>
-            <div class="form-row">
-                <label>List of teams participating seperated by , (comma) </label>
-                <input type="text" name="string_of_teams_list" required style="width:60%;">
-            </div>
-            <div class="text-center">
-                <button type="submit"> Submit </button>
-            </div>
-        </form>
+        <!-- <center><h1>Knockout Tournament Predictor</h1></center> -->
+        <!-- <img src="../assets/Oceanic.jfif"> -->
+
+        <h1 class="text-center">Knockout Tournament Predictor</h1>
+        <div class="card">
+            <form action="{% url 'home' %}" method="post" style="text-align: center;">
+                {% csrf_token %}
+                <div class="form-row">
+                    <label>Number of teams participating </label> <br>
+                    <input type="number" name="no_of_teams" style="text-align: center;" required>
+                </div>
+                <div class="form-row">
+                    <label>List of teams participating seperated by , (comma) </label><br>
+                    <input type="text" name="string_of_teams_list" required style="width:60%;text-align: center;">
+                </div>
+                <div class="text-center">
+                    <button type="submit"> Submit </button>
+                </div>
+            </form>
+        </div>
+
     </body>
 </html>
