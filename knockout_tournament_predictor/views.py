@@ -188,7 +188,7 @@ def home(request):
         # print answer
         win_list={}
         for i in range(no_of_teams):
-            win_list[my_dict[i]]=ans[i]
+            win_list[my_dict[i]]=format(ans[i],"0.4f")  #Truncate the answer to 4 decimal places
 
         return render(request,'display_output.html',context=win_list)
     return render(request,'index.html')
