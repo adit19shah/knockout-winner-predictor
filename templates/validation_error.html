@@ -11,6 +11,7 @@
                 font-family: 'Roboto', sans-serif;
                 color: white;
                 background-size: cover;
+                height: 100vh;
             }
             .text-center {
                 text-align: center;
@@ -20,6 +21,20 @@
                 background: #af0101;
                 border-radius: 20px;
                 margin-bottom: 2%;
+            }
+            a {
+                background-color: #7f00ff;
+                color: white;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 20px;
+                border: 2px solid white;
+            }
+            .button {
+                /* margin: auto; */
+                text-align: center;
             }
         </style>
     </head>
@@ -37,7 +52,10 @@
             {% if win_lose_equal %}
                 <h1 class="text-center"> Please enter valid data !! A team cannot play against itself</h1>
             {% endif %}
-            <a href="http://127.0.0.1:8000/"> <B> Back to Home Screen </B> </a> </h2>
+        </div>
+
+        <div class="button">
+            <a href="http://127.0.0.1:8000/"> Back to Home Screen </a>
         </div>
     </body>
 </html>
