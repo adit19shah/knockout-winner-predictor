@@ -5,20 +5,35 @@
         <title>Prediction Results</title>
         <style>
             body{
-                background-color: whitesmoke;
-                font-size: x-large;
+                background-image: url('https://lh3.googleusercontent.com/nxoNbQm7NzuHdK98ZwdxH96IDp9X3YhZG8NH-TFnPXzgCfi_1MmBT_SSSNq5s2oVzCbfRQ=s170');
+                font-size: medium;
+                background-size: cover;
+                font-family: 'Roboto', sans-serif;
+                color: white;
+                background-size: cover;
+            }
+            .text-center {
+                text-align: center;
+            }
+            .heading-cov {
+                border:white 2px solid;
+                background: #af0101;
+                border-radius: 20px;
+                margin-bottom: 2%;
             }
         </style>
     </head>
     <body>
-       {% if out_of_domain %}
-            <center><h1> Please enter valid data !! Number of participating teams can be at most 16.</h1></center>
-        {% endif %}
-        {% if not_power_2 %}
-            <center><h1> Please enter valid data !! Number of participating teams should be a power of 2</h1></center>
-        {% endif %}
-        {% if list_team_inconsistent %}
-            <center><h1> Please enter valid data !! Number of distinct teams in the list do not match with the number entered.</h1></center>
-        {% endif %}
+        <div class="heading-cov">
+            {% if out_of_domain %}
+                <h1 class="text-center"> Please enter valid data !! Number of participating teams can be at most 16.</h1>
+            {% endif %}
+            {% if not_power_2 %}
+                <h1 class="text-center"> Please enter valid data !! Number of participating teams should be a power of 2</h1>
+            {% endif %}
+            {% if list_team_inconsistent %}
+                <h1 class="text-center"> Please enter valid data !! Number of distinct teams in the list do not match with the number entered.</h1>
+            {% endif %}
+        </div>
     </body>
 </html>
