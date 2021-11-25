@@ -143,7 +143,7 @@ def solve(n):
     for i in range(n):
         ans[i] = dp1[(1 << i)]
 
-#View
+#Views
 def home(request):
     if request.method=="POST":
         no_of_teams=int(request.POST.get('no_of_teams'))
@@ -216,4 +216,7 @@ def home(request):
 
         return render(request,'display_output.html',context=win_list)
     return render(request,'index.html')
+
+def add_data(request):
+    return render(request,'add_match_data.html')
 

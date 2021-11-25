@@ -20,4 +20,5 @@ from knockout_tournament_predictor import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home,name="home"),
+    path('add_new_data/',views.add_data,name="add_match_data"),
 ]
