@@ -218,5 +218,24 @@ def home(request):
     return render(request,'index.html')
 
 def add_data(request):
+    if request.method=="POST":
+        win_team = request.POST.get('win_team')
+        lose_team = request.POST.get('lose_team')
+
+        #increment total matches and number of wins for winning team
+        tmp = getattr(knockout_tournament_predictor.models, win_team).objects.all().filter(opp_team_name=lose_team)
+        for x in tmp:  # Not to be mislead by loop, tmp will have always have only 1 entry
+            x.no_of_wins=x.no_of_wins+1
+            x.tot_matches=x.tot_matches+1
+            x.save()
+
+        #increment only total matches for losing team
+        tmp = getattr(knockout_tournament_predictor.models, lose_team).objects.all().filter(opp_team_name=win_team)
+        for x in tmp:  # Not to be mislead by loop, tmp will have always have only 1 entry
+            x.tot_matches=x.tot_matches+1
+            x.save()
+
+        #return success page if data updated successfully
+        return render(request,'add_data_success.html')
     return render(request,'add_match_data.html')
 
