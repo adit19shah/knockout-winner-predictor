@@ -222,6 +222,11 @@ def add_data(request):
         win_team = request.POST.get('win_team')
         lose_team = request.POST.get('lose_team')
 
+        #Throw error if winning team and losing team are equal
+        if(win_team == lose_team):
+            context={'win_lose_equal':True}
+            return render(request, 'validation_error.html',context)
+
         #increment total matches and number of wins for winning team
         tmp = getattr(knockout_tournament_predictor.models, win_team).objects.all().filter(opp_team_name=lose_team)
         for x in tmp:  # Not to be mislead by loop, tmp will have always have only 1 entry

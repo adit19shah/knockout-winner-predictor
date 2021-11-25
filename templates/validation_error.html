@@ -34,6 +34,9 @@
             {% if list_team_inconsistent %}
                 <h1 class="text-center"> Please enter valid data !! Number of distinct teams in the list do not match with the number entered.</h1>
             {% endif %}
+            {% if win_lose_equal %}
+                <h1 class="text-center"> Please enter valid data !! A team cannot play against itself</h1>
+            {% endif %}
             <a href="http://127.0.0.1:8000/"> <B> Back to Home Screen </B> </a> </h2>
         </div>
     </body>
