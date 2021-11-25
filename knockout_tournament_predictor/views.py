@@ -1,5 +1,24 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+
+import knockout_tournament_predictor
+from knockout_tournament_predictor.models import A
+from knockout_tournament_predictor.models import B
+from knockout_tournament_predictor.models import C
+from knockout_tournament_predictor.models import D
+from knockout_tournament_predictor.models import E
+from knockout_tournament_predictor.models import F
+from knockout_tournament_predictor.models import G
+from knockout_tournament_predictor.models import H
+from knockout_tournament_predictor.models import I
+from knockout_tournament_predictor.models import J
+from knockout_tournament_predictor.models import K
+from knockout_tournament_predictor.models import L
+from knockout_tournament_predictor.models import M
+from knockout_tournament_predictor.models import N
+from knockout_tournament_predictor.models import O
+from knockout_tournament_predictor.models import P
+
 import numpy as np
 import math
 
@@ -159,19 +178,24 @@ def home(request):
 
         #Create probability matrix
         #prob[i][j] = probability of team i winning over team j
-        '''
+        #'''
         for i in range(no_of_teams):
             for j in range(no_of_teams):
-                tmp=my_dict[i].objects.all().filter(opp_team_name=my_dict[j])
-                for x in tmp: #Not to be mislead by loop, tmp will have only 1 entry
+                tmp=getattr(knockout_tournament_predictor.models,my_dict[i]).objects.all().filter(opp_team_name=my_dict[j])
+                for x in tmp: #Not to be mislead by loop, tmp will have always have only 1 entry
                     prob[i][j]=x.no_of_wins/x.tot_matches
-        '''
+        #'''
+
+        ''' 
+        Uncomment this part if don't want database, and want to use random data.
+         
         for i in range(no_of_teams):
             for j in range(no_of_teams):
                 if prob[j][i] != 0:
                     prob[i][j] = 1 - prob[j][i]
                 else:
                     prob[i][j] = (i + 1) * (j + 1) * 0.01
+        '''
 
         print("Number of teams are: ", end=" ")
         print(no_of_teams)
